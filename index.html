@@ -1,181 +1,81 @@
-<!doctype html>
 <html lang="cs">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Moje stránka — Ukázka</title>
-  <meta name="description" content="Jednoduchá responzivní webová stránka vytvořená v HTML, CSS a malém JavaScriptu. Obsah v češtině.">
-  <meta name="author" content="Váš Název">
+<p class="muted">Křesťanská a demokratická unie – Československá strana lidová je česká politická strana založená v roce 1919. Zaměřuje se na křesťansko‑demokratické hodnoty, podporu rodin, regionální rozvoj a odpovědnou ekonomiku.</p>
+<ul>
+<li>Směr: křesťanská demokracie, proevropská orientace</li>
+<li>Vznik: 1919</li>
+<li>Priorita: rodina, vzdělávání, sociální odpovědnost, komunální politika</li>
+</ul>
+</div>
+</section>
 
-  <!-- Favicon (data URI small example) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
 
-  <!-- Základní styly -->
-  <style>
-    :root{
-      --bg:#0f1724; /* tmavé pozadí */
-      --card:#0b1220;
-      --muted:#a8b3c7;
-      --accent:#3b82f6; /* modrá */
-      --accent-2:#06b6d4; /* akcent 2 */
-      --glass: rgba(255,255,255,0.03);
-      color-scheme: dark;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#061024);color:#e6eef8}
-    a{color:var(--accent);text-decoration:none}
-    header{backdrop-filter: blur(6px);background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-bottom:1px solid rgba(255,255,255,0.02)}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
+<section id="sluzby" style="margin-top:22px">
+<div class="card">
+<h2>Program KDU‑ČSL (20. století)</h2>
+<p class="muted">Historické cíle strany v první polovině a druhé polovině 20. století.</p>
+<ul>
+<li>Budování demokratického a stabilního státu po roce 1918</li>
+<li>Podpora rodiny, sociální spravedlnosti a solidarity</li>
+<li>Ochrana drobných zemědělců a živnostníků</li>
+<li>Prosazování křesťansko‑demokratických hodnot ve společnosti</li>
+<li>Odpor proti totalitním režimům (nacismus i komunismus)</li>
+<li>Usilování o obnovu demokracie po roce 1945 a 1989</li>
+</ul>
+</div>
+</section>
 
-    /* Navbar */
-    nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
-    .brand .logo{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-size:18px}
-    .nav-links{display:flex;gap:12px;align-items:center}
-    .btn{padding:8px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#021125;font-weight:600;border:none;cursor:pointer}
 
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;padding:48px 0}
-    .card{background:linear-gradient(180deg,var(--card),rgba(11,17,32,0.7));border-radius:14px;padding:22px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.02)}
-    h1{margin:0 0 10px;font-size:32px}
-    p.lead{color:var(--muted);margin:0 0 16px}
 
-    /* Features */
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
-    .feature{padding:14px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.02)}
-    .feature h3{margin:6px 0 0}
 
-    /* Footer */
-    footer{padding:28px 0;text-align:center;color:var(--muted);font-size:14px}
+</main>
 
-    /* Responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr;}
-      .features{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width:520px){
-      .features{grid-template-columns:1fr}
-      .nav-links{display:none}
-    }
 
-    /* Kontakt form */
-    form{display:flex;flex-direction:column;gap:10px}
-    input,textarea{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
-    textarea{min-height:120px}
-    .muted{color:var(--muted);font-size:14px}
+<footer>
+<div class="container card" style="margin-top:22px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+<div class="small">Vytvořeno: <time datetime="2025-12-05">5. prosince 2025</time></div>
+</div>
+</footer>
 
-    /* small utility */
-    .small{font-size:13px;color:var(--muted)}
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container">
-      <nav aria-label="Hlavní navigace">
-        <div class="brand">
-          <div class="logo" aria-hidden="true">M</div>
-          <div>
-            <div style="font-size:14px">MojeStránka.cz</div>
-            <div class="small">Ukázková stránka • HTML/CSS/JS</div>
-          </div>
-        </div>
-        <div class="nav-links" role="navigation" aria-label="Sekce">
-          <a href="#home">Domů</a>
-          <a href="#sluzby">Služby</a>
-          <a href="#kontakt">Kontakt</a>
-        </div>
-        <button class="btn" onclick="alert('Děkujeme za zájem!')" aria-label="Kontaktovat">Kontakt</button>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container" id="home">
-    <section class="hero">
-      <div>
-        <div class="card" role="region" aria-labelledby="hero-title">
-          <h1 id="hero-title">Ahoj! Vítejte na mé ukázkové stránce</h1>
-          <p class="lead">Toto je plně funkční šablona vytvořená v čistém HTML, CSS a JavaScriptu. Snadno upravitelná, plně responzivní a připravená k nasazení.</p>
-          <div class="features" aria-hidden="false">
-            <div class="feature">
-              <strong>Responzivní design</strong>
-              <h3>Pracuje na mobilech i desktopu</h3>
-            </div>
-            <div class="feature">
-              <strong>Přístupnost</strong>
-              <h3>Semantické HTML a ARIA</h3>
-            </div>
-            <div class="feature">
-              <strong>Snadná úprava</strong>
-              <h3>Upravte barvy, texty a rozložení</h3>
-            </div>
-          </div>
+<!-- Malý JavaScript: validace formuláře a ukládání do localStorage pro demo -->
+<script>
+function handleForm(e){
+e.preventDefault();
+const form = e.target;
+const name = form.name.value.trim();
+const email = form.email.value.trim();
+const message = form.message.value.trim();
+const result = document.getElementById('form-result');
 
-          <p class="small" style="margin-top:14px">Tip: otevřete soubor <code>index.html</code> v prohlížeči nebo pokračujte v úpravách v editoru (VS Code, Sublime, atd.).</p>
-        </div>
-      </div>
 
-      
-    </section>
+if(!name || !email || !message){
+result.textContent = 'Vyplňte prosím všechna pole.';
+return;
+}
 
-    <section id="sluzby" style="margin-top:22px">
-      <div class="card">
-        <h2>Služby</h2>
-        <p class="muted">Co nabízíme</p>
-        <ul>
-          <li>Vývoj webových stránek na míru</li>
-          <li>Responzivní design</li>
-          <li>SEO základ a optimalizace rychlosti</li>
-        </ul>
-      </div>
-    </section>
 
-    
+// Simulace odeslání: uloží do localStorage a ukáže hlášku
+const entry = {name,email,message,ts:new Date().toISOString()};
+const db = JSON.parse(localStorage.getItem('contactMessages')||'[]');
+db.push(entry);
+localStorage.setItem('contactMessages', JSON.stringify(db));
 
-  </main>
 
-  <footer>
-    <div class="container card" style="margin-top:22px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-      
-      <div class="small">Vytvořeno: <time datetime="2025-12-05">5. prosince 2025</time></div>
-    </div>
-  </footer>
+result.textContent = 'Děkujeme! Zpráva byla uložena lokálně (demo).';
+form.reset();
+}
 
-  <!-- Malý JavaScript: validace formuláře a ukládání do localStorage pro demo -->
-  <script>
-    function handleForm(e){
-      e.preventDefault();
-      const form = e.target;
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const message = form.message.value.trim();
-      const result = document.getElementById('form-result');
 
-      if(!name || !email || !message){
-        result.textContent = 'Vyplňte prosím všechna pole.';
-        return;
-      }
-
-      // Simulace odeslání: uloží do localStorage a ukáže hlášku
-      const entry = {name,email,message,ts:new Date().toISOString()};
-      const db = JSON.parse(localStorage.getItem('contactMessages')||'[]');
-      db.push(entry);
-      localStorage.setItem('contactMessages', JSON.stringify(db));
-
-      result.textContent = 'Děkujeme! Zpráva byla uložena lokálně (demo).';
-      form.reset();
-    }
-
-    // Malý script pro přidání id z URL # anchors smooth scroll
-    if('scrollBehavior' in document.documentElement.style){
-      document.querySelectorAll('a[href^="#"]').forEach(a=>{
-        a.addEventListener('click',e=>{
-          e.preventDefault();
-          const target=document.querySelector(a.getAttribute('href'));
-          if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
-        });
-      });
-    }
-  </script>
+// Malý script pro přidání id z URL # anchors smooth scroll
+if('scrollBehavior' in document.documentElement.style){
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+a.addEventListener('click',e=>{
+e.preventDefault();
+const target=document.querySelector(a.getAttribute('href'));
+if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+});
+});
+}
+</script>
 </body>
 </html>
