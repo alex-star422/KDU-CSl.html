@@ -3,104 +3,212 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Historie KDU-ČSL</title>
+  <title>Historie KDU‑ČSL — Moderní verze</title>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #f5f8ff, #e8f0ff);
-      color: #333;
+      background: linear-gradient(135deg, #dff1ff, #f0f7ff);
+      color: #222;
+      overflow-x: hidden;
     }
 
-    header {
-      padding: 3rem 2rem;
-      text-align: center;
-      background: linear-gradient(135deg, #4caf50, #2e7d32);
+    /* HERO */
+    .hero {
+      height: 60vh;
+      background: linear-gradient(120deg, #4caf50, #2e7d32, #1b5e20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       color: white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      text-align: center;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     }
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      animation: fadeIn 1.2s ease;
     }
 
+    .hero p {
+      margin-top: 1rem;
+      font-size: 1.3rem;
+      max-width: 800px;
+      opacity: 0.9;
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* SECTIONS */
     section {
-      margin: 2rem auto;
-      max-width: 900px;
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
     }
 
     h2 {
-      color: #2e5a8e;
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #1f3b73;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .box {
-      padding: 1.5rem;
-      border-radius: 12px;
-      background: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      border-left: 6px solid #4caf50;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    .card {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-top: 1rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.5);
     }
 
-    .box:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.18);
+    }
+
+    /* TIMELINE STYLE */
+    .timeline {
+      border-left: 4px solid #4caf50;
+      margin-left: 1rem;
+      padding-left: 2rem;
+    }
+
+    .timeline-item {
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      background: #4caf50;
+      border-radius: 50%;
+      position: absolute;
+      left: -32px;
+      top: 6px;
     }
 
     footer {
-      margin-top: 4rem;
-      text-align: center;
-      padding: 1.5rem;
-      background: #2e7d32;
+      margin-top: 5rem;
+      background: #1b5e20;
       color: white;
+      text-align: center;
+      padding: 2rem;
+      font-size: 1rem;
+      letter-spacing: .5px;
+    }
+  @keyframes floatLogo {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0); }
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      animation: pulse 2s infinite;
+      opacity: 0.9;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
     }
   </style>
 </head>
 <body>
-  <header>
+
+  <div class="hero">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/KDU-CSL_logo.svg/256px-KDU-CSL_logo.svg.png" alt="KDU-ČSL Logo" style="width:120px; margin-bottom:20px; animation: floatLogo 4s ease-in-out infinite;">
+
     <h1>Historie KDU‑ČSL</h1>
-    <p>Tato stránka jednoduše shrnuje vývoj a historii Křesťanské a demokratické unie – Československé strany lidové.</p>
-  </header>
+    <p>Přehledná a moderní prezentace vývoje jedné z nejstarších politických stran na českém území.</p>
+  </div>
 
   <section>
+    <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Ikona">
     <h2>Založení a počátky</h2>
-    <div class="box">
-      <!-- Sem můžete napsat stručný přehled o založení (např. rok 1919, kořeny v československém katolickém hnutí apod.) -->
-      <p>[Text o vzniku strany a jejích raných cílech]</p>
+    <div class="card timeline">
+      <div class="timeline-item">
+        <p>KDU‑ČSL vzniká roku 1919 jako Československá strana lidová. Strana navazuje na dlouhou tradici katolického politického myšlení a staví na hodnotách svobody, solidarity a spravedlnosti.</p>
+      </div>
+      <div class="timeline-item">
+        <p>Už od počátku se profiluje jako hlas venkova, rodin a křesťanských demokratických principů. Patří mezi důležité stabilizační prvky mladé první republiky.</p>
+      </div>
     </div>
   </section>
 
   <section>
     <h2>Meziválečné období</h2>
-    <div class="box">
-      <!-- Stručný popis působení ve 20. a 30. letech, účast ve vládách apod. -->
-      <p>[Text o působení v meziválečné politice]</p>
+    <div class="card timeline">
+      <div class="timeline-item">
+        <p>Lidová strana se účastní několika demokratických vlád první republiky. Prosazuje sociální reformy, ochranu demokracie a vyváženou hospodářskou politiku.</p>
+      </div>
+      <div class="timeline-item">
+        <p>V této době se stává jednou z klíčových konzervativních stran s důrazem na parlamentní demokracii a spolupatřičnost k evropskému politickému prostoru.</p>
+      </div>
     </div>
   </section>
 
   <section>
     <h2>Období po roce 1945</h2>
-    <div class="box">
-      <!-- Úloha v poválečném období, situace po roce 1948, fungování v rámci Národní fronty -->
-      <p>[Text o poválečném období]</p>
+    <div class="card timeline">
+      <div class="timeline-item">
+        <p>Po druhé světové válce se Lidová strana znovu aktivně zapojuje do obnovy politického života a rekonstrukce státu.</p>
+      </div>
+      <div class="timeline-item">
+        <p>Po roce 1948 je donucena působit v rámci Národní fronty. I přes omezení si zachovává organizační strukturu a přetrvává jako jedna z mála povolených stran.</p>
+      </div>
     </div>
   </section>
 
   <section>
-    <h2>Po sametové revoluci</h2>
-    <div class="box">
-      <!-- Transformace strany po roce 1989 a významné milníky 90. let a 21. století -->
-      <p>[Text o vývoji po roce 1989]</p>
+    <h2>Po roce 1989</h2>
+    <div class="card timeline">
+      <div class="timeline-item">
+        <p>Po sametové revoluci se strana plně osvobozuje a přijímá název KDU‑ČSL. Dochází k modernizaci programu, organizační obnově a návratu do demokratického systému.</p>
+      </div>
+      <div class="timeline-item">
+        <p>V 90. letech i 21. století se účastní několika koaličních vlád, působí jako stabilní křesťansko-demokratická síla a podílí se na tvorbě sociální a rodinné politiky.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Milníky KDU‑ČSL</h2>
+    <div class="card timeline">
+      <div class="timeline-item"><p><strong>1919</strong> — Založení Československé strany lidové.</p></div>
+      <div class="timeline-item"><p><strong>1938</strong> — Aktivní role při obraně demokracie během krize republiky.</p></div>
+      <div class="timeline-item"><p><strong>1945</strong> — Obnova činnosti strany po válce.</p></div>
+      <div class="timeline-item"><p><strong>1989</strong> — Zásadní transformace po sametové revoluci.</p></div>
+      <div class="timeline-item"><p><strong>2000+</strong> — Účast v moderních vládách a stabilní parlamentní pozice.</p></div>
     </div>
   </section>
 
   <footer>
-    <p>Vytvořeno jako jednoduchá ukázková stránka.</p>
+    <p>Moderní prezentace historie — vytvořeno pro demonstraci.</p>
   </footer>
+
 </body>
 </html>
+
 
 
